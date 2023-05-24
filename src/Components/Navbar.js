@@ -1,10 +1,10 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,6 +17,9 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import MicIcon from "@mui/icons-material/Mic";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { useDispatch } from "react-redux";
+import { setSidebar } from "../Store/sidebarSlice";
+import { useNavigate } from "react-router";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -62,6 +65,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -156,7 +162,9 @@ export default function Navbar() {
       </MenuItem>
     </Menu>
   );
-
+  useEffect(() => {
+    dispatch(setSidebar(isSidebarOpen));
+  }, [isSidebarOpen]);
   return (
     <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" style={{ background: "#0F0F0F" }}>
@@ -167,7 +175,7 @@ export default function Navbar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
-            onClick={() => console.log("side bar")}
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           >
             <MenuIcon />
           </IconButton>
@@ -177,6 +185,7 @@ export default function Navbar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={() => navigate("/")}
           >
             <YouTubeIcon fontSize="large" style={{ color: "#ff0000" }} />
             <div style={{ letterSpacing: "-2px", fontWeight: "0" }}>
@@ -223,7 +232,7 @@ export default function Navbar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
