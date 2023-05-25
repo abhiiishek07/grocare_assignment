@@ -166,7 +166,7 @@ export default function Navbar() {
     dispatch(setSidebar(isSidebarOpen));
   }, [isSidebarOpen]);
   return (
-    <Box sx={{ flexGrow: 2 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: "#0F0F0F" }}>
         <Toolbar>
           <IconButton
@@ -174,7 +174,7 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 1 }}
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           >
             <MenuIcon />
@@ -214,7 +214,7 @@ export default function Navbar() {
               edge="start"
               color="inherit"
               aria-label="open drawer"
-              sx={{ mr: 2 }}
+              sx={{ mr: 1 }}
             >
               <MicIcon
                 fontSize="medium"

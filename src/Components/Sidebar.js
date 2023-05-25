@@ -36,11 +36,27 @@ function Sidebar() {
   );
 }
 const Wrapper = styled.div`
-  height: 95vh;
-  width: 4.8%;
+  min-height: 100vh;
+  /* width: 4.8%; */
   background-color: #0f0f0f;
+  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 761px) {
+    width: 4.8%;
+  }
+
+  @media screen and (max-width: 760px) {
+    width: 10%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 17%;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 20%;
+  }
   .text {
     font-size: 10px;
     /* font-weight: ; */

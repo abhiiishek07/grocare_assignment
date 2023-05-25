@@ -132,22 +132,41 @@ function OpenSidebar() {
   );
 }
 const Wrapper = styled.div`
-  height: 95vh;
-  width: 15%;
+  min-height: 100vh;
+  /* width: 15%; */
   background-color: #0f0f0f;
   display: flex;
   flex-direction: column;
-  .text {
-    font-size: 15px;
-    /* font-weight: ; */
+  @media screen and (min-width: 761px) {
+    width: 15%;
+    font-size: 12px;
     color: white;
   }
+
+  @media screen and (max-width: 760px) {
+    width: 15%;
+    font-size: 12px;
+    color: white;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 30%;
+    font-size: 10px;
+    color: white;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 35%;
+    font-size: 10px;
+    color: white;
+  }
+
   .icon_btn {
     margin: 0 10px;
     cursor: pointer;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    /* justify-content: space-around; */
+    /* align-items: center; */
     /* background-color: red; */
   }
   .btn_wrapper {
@@ -173,7 +192,7 @@ const Wrapper = styled.div`
     background: whitesmoke;
     /* margin: 2px 0 2px 0; */
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 `;
 
