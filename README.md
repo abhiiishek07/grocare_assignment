@@ -44,6 +44,10 @@ npm start
 
 5: Open your browser and navigate to http://localhost:3000 to view the application.
 
+## Live Demo
+
+You can also check out the live version of the application [here](https://grocaretube.netlify.app/).
+
 ## API Pagination
 
 The application fetches videos from an API using pagination. The API endpoint for fetching videos is:
