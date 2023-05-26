@@ -135,11 +135,15 @@ const Wrapper = styled.div`
   }
   .btn_wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   .functions {
     background-color: #0f0f0f;
     height: 83vh;
+    display: flex;
+
     display: flex;
     flex-direction: column;
   }
