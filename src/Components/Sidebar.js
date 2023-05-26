@@ -37,9 +37,7 @@ function Sidebar() {
 }
 const Wrapper = styled.div`
   min-height: 100vh;
-  /* width: 4.8%; */
   background-color: #0f0f0f;
-  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 761px) {

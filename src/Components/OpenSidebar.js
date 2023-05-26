@@ -165,22 +165,13 @@ const Wrapper = styled.div`
     margin: 0 10px;
     cursor: pointer;
     display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
-    /* background-color: red; */
   }
   .btn_wrapper {
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: space-evenly; */
     align-items: center;
-    /* justify-content: space-around; */
-    /* justify-content: ; */
-    /* gap: 30px; */
     width: 100%;
     border-radius: 0.5rem;
     height: 5vh;
-    /* background-color: red; */
     :hover {
       background-color: #3f3f3f;
     }
@@ -190,7 +181,6 @@ const Wrapper = styled.div`
     border: none;
     height: 0.1px;
     background: whitesmoke;
-    /* margin: 2px 0 2px 0; */
     margin-top: 20px;
     margin-bottom: 20px;
   }

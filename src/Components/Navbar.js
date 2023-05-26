@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { setSidebar } from "../Store/sidebarSlice";
 import { useNavigate } from "react-router";
 
+// Using the MUI Navbar and made some changes
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
 

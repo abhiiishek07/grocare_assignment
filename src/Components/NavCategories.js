@@ -30,10 +30,7 @@ function NavCategories() {
   );
 }
 const Wrapper = styled.div`
-  /* width: auto; */
-  /* width: 110%; */
   height: 6vh;
-  /* width: auto; */
   background-color: #0f0f0f;
   display: flex;
   align-items: center;

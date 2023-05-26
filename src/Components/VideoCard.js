@@ -16,6 +16,7 @@ function VideoCard(props) {
   } = props;
   let navigate = useNavigate();
   const handleClick = () => {
+    // using react-router v6 feature to send the data to video page
     navigate("/video/" + id, {
       state: {
         id: id,
@@ -49,13 +50,11 @@ function VideoCard(props) {
 const Wrapper = styled.div`
   width: 20.5rem;
   height: 41vh;
-  /* background-color: red; */
   background-color: #0f0f0f;
   border-radius: 0.6rem 0.6rem 0 0;
   margin: 1rem;
   .thumbnailWrapper {
     height: 26vh;
-    /* background-color: blue; */
     overflow: hidden;
     border-radius: 0.6rem;
     cursor: pointer;
@@ -65,7 +64,6 @@ const Wrapper = styled.div`
     min-width: 100%;
   }
   .titleWrapper {
-    /* background-color: brown; */
     height: 6vh;
     width: 100%;
     margin: 0.5rem 0 0;
@@ -79,17 +77,14 @@ const Wrapper = styled.div`
     overflow: hidden;
   }
   .description {
-    /* background-color: yellow; */
     width: 70%;
     color: white;
     display: flex;
     margin-left: 0.5rem;
     font-weight: bold;
     align-items: center;
-    /* flex-direction: ; */
   }
   .userDetail {
-    /* background-color: darkblue; */
     height: 8vh;
     width: 80%;
     padding: 0;
@@ -99,11 +94,8 @@ const Wrapper = styled.div`
     font-weight: bold;
     color: white;
     justify-content: flex-start;
-
-    /* flex-direction: start; */
   }
   .details {
-    /* background-color: yellow; */
     width: 100%;
     color: #c0c0c0;
     display: flex;

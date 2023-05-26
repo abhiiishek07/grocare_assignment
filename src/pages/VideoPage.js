@@ -50,7 +50,6 @@ function VideoPage() {
               height="100%"
               playing={playing}
               loop
-              // playIcon={<PlayArrowIcon color="red" />}
               style={{ borderRadius: "1rem" }}
             />
             <p className="title">{location.state.title}</p>
@@ -119,46 +118,34 @@ function VideoPage() {
 }
 const Wrapper = styled.div`
   background-color: #0f0f0f;
-  /* background-color: aliceblue; */
   width: auto;
-  height: 90vh;
-  /* display: inline-block; */
+  height: auto;
   display: flex;
   flex-grow: 1;
   .video-container {
     width: 100%;
     height: 85vh;
-    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .text {
     font-size: 10px;
-    /* font-weight: ; */
     color: white;
   }
   .btn_wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
   .functions {
-    /* min-height: 100vh; */
-    /* width: 4.8%; */
     background-color: #0f0f0f;
     height: 83vh;
-    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
-
-    /* background-color: red; */
   }
 `;
 const VideoWrapper = styled.div`
   width: 24.35%;
-  /* background-color: aliceblue; */
   height: 83vh;
   border-radius: 1rem;
   position: relative;
