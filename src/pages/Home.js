@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
-
+import Navbar from "../Components/Navbar";
 import { useSelector } from "react-redux";
-import Sidebar from "./Sidebar";
-import OpenSidebar from "./OpenSidebar";
-import NavCategories from "./NavCategories";
-import VideosList from "./VideosList";
+import Sidebar from "../Components/Sidebar";
+import OpenSidebar from "../Components/OpenSidebar";
+import NavCategories from "../Components/NavCategories";
+import VideosList from "../Components/VideosList";
 function Home() {
   const isSidebarOpen = useSelector((state) => state.sidebar);
 

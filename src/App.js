@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
-import Home from "./Components/Home.js";
-import VideoPage from "./Components/VideoPage";
+import Home from "./pages/Home.js";
+import VideoPage from "./pages/VideoPage";
 function App() {
   return (
     <div className="App">

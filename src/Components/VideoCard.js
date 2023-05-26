@@ -1,13 +1,37 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useNavigate } from "react-router";
 function VideoCard(props) {
-  const { id, name, profile, views, thumbnail, description, videoLink, title } =
-    props;
+  const {
+    id,
+    name,
+    profile,
+    views,
+    thumbnail,
+    description,
+    videoLink,
+    title,
+    comments,
+    creator_handle,
+  } = props;
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/video/" + id, {
+      state: {
+        id: id,
+        videoLink: videoLink,
+        description: description,
+        title: title,
+        comments: comments,
+        handle: creator_handle,
+        profile: profile,
+      },
+    });
+  };
   return (
     <Wrapper>
-      <div className="thumbnailWrapper">
-        <img src={props.thumbnail} alt="thumbnail" />
+      <div className="thumbnailWrapper" onClick={handleClick}>
+        <img src={thumbnail} alt="thumbnail" />
       </div>
       <div className="titleWrapper">
         <div className="profile">

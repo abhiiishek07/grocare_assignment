@@ -3,20 +3,25 @@ import styled from "styled-components";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
-import VideoCard from "./Cards/VideoCard";
+import VideoCard from "./VideoCard";
 import { Grid } from "@mui/material";
+
+import Loading from "./Loading";
 function VideosList() {
-  const [pageNum, setPageNum] = React.useState(0);
+  const [pageNum, setPageNum] = useState(0);
   const [videoList, setVideoList] = useState([]);
+  const [loading, setLoading] = useState(false);
   console.log("videolist", videoList);
   const handlePageChange = (event, value) => {
     setPageNum(value - 1);
   };
   const fetchVideos = async () => {
+    setLoading(true);
     try {
       const response = await axios.get(
         `https://internship-service.onrender.com/videos?page=${pageNum}`
       );
+      setLoading(false);
       setVideoList(response.data.data.posts);
     } catch (error) {
       console.error("Error fetching videos:", error);
@@ -28,25 +33,32 @@ function VideosList() {
 
   return (
     <Wrapper>
-      <Grid container>
-        {videoList.map((video) => {
-          return (
-            <Grid item lg={3} md={4} xs={12}>
-              <VideoCard
-                id={video.creator.id}
-                name={video.creator.name}
-                profile={video.creator.pic}
-                views={video.reaction.count}
-                comments={video.comment.count}
-                thumbnail={video.submission.thumbnail}
-                description={video.submission.description}
-                videoLink={video.submission.mediaUrl}
-                title={video.submission.title}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Grid container>
+            {videoList.map((video) => {
+              return (
+                <Grid item lg={3} md={4} xs={12}>
+                  <VideoCard
+                    id={video.creator.id}
+                    name={video.creator.name}
+                    profile={video.creator.pic}
+                    views={video.reaction.count}
+                    comments={video.comment.count}
+                    thumbnail={video.submission.thumbnail}
+                    description={video.submission.description}
+                    videoLink={video.submission.mediaUrl}
+                    title={video.submission.title}
+                    creator_handle={video.creator.handle}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </>
+      )}
       <PaginationWrapper>
         <Stack spacing={2}>
           <Pagination
@@ -56,7 +68,7 @@ function VideosList() {
             variant="outlined"
             shape="rounded"
             color="primary"
-            sx={{ button: { color: "#ffffff" } }}
+            sx={{ button: { color: "#ffffff" }, color: "#ffffff" }}
           />
         </Stack>
       </PaginationWrapper>
