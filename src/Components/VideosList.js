@@ -76,17 +76,38 @@ function VideosList() {
   );
 }
 const Wrapper = styled.div`
-  /* background-color: aliceblue; */
   background-color: #0f0f0f;
   min-height: 93vh;
   width: auto;
+  @media screen and (max-width: 480px) {
+    width: 40%;
+  }
 `;
 const PaginationWrapper = styled.div`
   width: 100%;
   height: 20vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  @media screen and (min-width: 761px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 760px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export default VideosList;

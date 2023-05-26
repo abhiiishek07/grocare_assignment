@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    width: 70%;
+    width: 35%;
     font-size: 7px;
     .CategoryWrapper {
       padding: 0.3rem 1rem;
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 360px) {
-    width: 70%;
+    width: 30%;
     font-size: 7px;
     .CategoryWrapper {
       padding: 0.3rem 1rem;

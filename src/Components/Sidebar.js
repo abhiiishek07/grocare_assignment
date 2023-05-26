@@ -5,10 +5,12 @@ import MovieCreationIcon from "@mui/icons-material/MovieCreation";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import IconButton from "@mui/material/IconButton";
+import { useNavigate } from "react-router";
 function Sidebar() {
+  const navigate = useNavigate();
   return (
     <Wrapper>
-      <IconButton>
+      <IconButton onClick={() => navigate("/")}>
         <div className="btn_wrapper">
           <HomeIcon style={{ color: "white" }} />
           <p className="text">Home</p>
