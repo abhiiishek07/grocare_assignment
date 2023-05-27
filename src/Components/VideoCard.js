@@ -1,33 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router";
+import { setSelectedVideo } from "../Store/selectedVideoSlice";
+import { useDispatch } from "react-redux";
+
 function VideoCard(props) {
-  const {
-    id,
-    name,
-    profile,
-    views,
-    thumbnail,
-    description,
-    videoLink,
-    title,
-    comments,
-    creator_handle,
-  } = props;
+  const { id, name, profile, views, thumbnail, title, pageNum } = props;
   let navigate = useNavigate();
+  let dispatch = useDispatch();
+
   const handleClick = () => {
-    // using react-router v6 feature to send the data to video page
-    navigate("/video/" + id, {
-      state: {
-        id: id,
-        videoLink: videoLink,
-        description: description,
-        title: title,
-        comments: comments,
-        handle: creator_handle,
-        profile: profile,
-      },
-    });
+    const data = {
+      // selected vide id & page Num by which we'll fetch data in video page
+      id: id,
+      pageNum: pageNum,
+    };
+    dispatch(setSelectedVideo(data));
+    navigate("/video/" + id);
   };
   return (
     <Wrapper>

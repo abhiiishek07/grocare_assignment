@@ -5,13 +5,12 @@ import Stack from "@mui/material/Stack";
 import axios from "axios";
 import VideoCard from "./VideoCard";
 import { Grid } from "@mui/material";
-
 import Loading from "./Loading";
 function VideosList() {
   const [pageNum, setPageNum] = useState(0);
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log("videolist", videoList);
+
   const handlePageChange = (event, value) => {
     setPageNum(value - 1);
   };
@@ -52,6 +51,7 @@ function VideosList() {
                     videoLink={video.submission.mediaUrl}
                     title={video.submission.title}
                     creator_handle={video.creator.handle}
+                    pageNum={pageNum}
                   />
                 </Grid>
               );

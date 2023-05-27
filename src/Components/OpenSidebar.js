@@ -137,29 +137,8 @@ const Wrapper = styled.div`
   background-color: #0f0f0f;
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 761px) {
-    width: 15%;
-    font-size: 12px;
-    color: white;
-  }
-
-  @media screen and (max-width: 760px) {
-    width: 15%;
-    font-size: 12px;
-    color: white;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 30%;
-    font-size: 10px;
-    color: white;
-  }
-
-  @media screen and (max-width: 360px) {
-    width: 35%;
-    font-size: 10px;
-    color: white;
-  }
+  width: 15%;
+  font-size: 15px;
 
   .icon_btn {
     margin: 0 10px;
