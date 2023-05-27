@@ -138,8 +138,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 15%;
-  font-size: 15px;
 
+  .text {
+    color: white;
+    font-size: 15px;
+  }
+  color: #ffffff;
   .icon_btn {
     margin: 0 10px;
     cursor: pointer;

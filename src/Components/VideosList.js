@@ -6,13 +6,19 @@ import axios from "axios";
 import VideoCard from "./VideoCard";
 import { Grid } from "@mui/material";
 import Loading from "./Loading";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setSelectedVideo } from "../Store/selectedVideoSlice";
 function VideosList() {
-  const [pageNum, setPageNum] = useState(0);
+  const selectedVideo = useSelector((state) => state.selectedVideo);
+  const [pageNum, setPageNum] = useState(selectedVideo.pageNum); // page num of pagination won't start from zero whenever we comaback from videopage
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const handlePageChange = (event, value) => {
     setPageNum(value - 1);
+    dispatch(setSelectedVideo({ id: "", pageNum: value - 1 }));
   };
   const fetchVideos = async () => {
     setLoading(true);
