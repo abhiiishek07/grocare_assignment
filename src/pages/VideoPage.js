@@ -29,6 +29,7 @@ function VideoPage() {
   const [playing, setPlaying] = useState(true);
 
   const handleClick = () => {
+    // modal functions
     setPlaying(!playing);
   };
   const handleClickOpen = () => {
